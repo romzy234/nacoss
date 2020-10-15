@@ -10,6 +10,7 @@ var checkSignIn = require('../middleware/checker');
 // router 
 // get routers
  router.get('/index',controller.getIndex);
+ router.get('/',controller.getIndex);
  router.get('/pay',controller.getPay);
  router.get('/admin/upload',checkSignIn, controller2.getUpload);
  router.get('/pdf.pdf',checkSignIn,controller3.test);
