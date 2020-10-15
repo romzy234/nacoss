@@ -55,7 +55,6 @@ exports.getAll = (req, res, next)=>{
 exports.getlevel = (req, res, next)=>{
     if(req.params.id == 100 || req.params.id == 200 || req.params.id == 300 || req.params.id == 400 ){
     var level = Number(req.params.id);
-    console.log(level)
     { payStack.find({ level: level, type: 'paystack' }, (err, data) =>{
         if(err){
             res.status(500);
