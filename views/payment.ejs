@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Payment Form</title>
+
+    <!-- Icons font CSS-->
+    <link href="../payment/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../payment/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
+
+    <!-- ../payment/Vendor CSS-->
+    <link href="../payment/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../payment/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="../payment/css/main.css" rel="stylesheet" media="all">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Payment Form</h2>
+                    <form id="paymentForm">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" placeholder="Jane" type="text" name="first_name"  required id="first-name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" placeholder="Doe" type="text" name="last_name"  required id="last-name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Date</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" name="date"  required id="date">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender" id="gender" value="male">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" placeholder="example@gmail.com" type="email" name="email"  required id="email-address">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" placeholder="08000000000" type="text" name="phone"  required id="phone" minlength="11">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Matriculation Number</label>
+                                    <input class="input--style-4" placeholder="VUG/CSC/18/0001" type="text" name="mat-no"  required id="mat-no" minlength="15" maxlength="15">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <!-- <div class="input-group">
+                                    <label class="label">Level</label>
+                                    <input class="input--style-4" placeholder="400" type="text" name="level"  required id="level">
+                                </div> -->
+                                <div class="input-group">
+                                    <label class="label">Level</label>
+                                    <select class="input--style-4" id="level">
+                                      <option value="100">100 Level</option>
+                                      <option value="200">200 Level</option>
+                                      <option value="300">300 Level</option>
+                                      <option value="400">400 Level</option>
+                                    </select>
+                                  </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <label class="label">Amount</label>
+                                <input class="input--style-4" placeholder="4000"  type="text" name="Amount"  required id="amount">
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit" onclick="payWithPaystack()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const paymentForm = document.getElementById('paymentForm');
+  paymentForm.addEventListener("submit", payWithPaystack, false);
+  function payWithPaystack(e) {
+    e.preventDefault();
+    const cyril =new Number(document.getElementById("level").value);
+    let handler = PaystackPop.setup({
+      key: 'pk_test_952a8997f5c031d387f8e3f88df0187f41b19cf0', // Replace with your public key
+      email: document.getElementById("email-address").value,
+      amount: document.getElementById("amount").value * 100,
+      firstname: document.getElementById("first-name").value,
+      lastname: document.getElementById("last-name").value,
+      date: document.getElementById("date").value,
+      phone: document.getElementById("phone").value,
+      levelword :cyril,
+  metadata:{
+    matric: document.getElementById("mat-no").value,
+      level : cyril ,
+      date: document.getElementById("date").value,
+      //gender: document.getElementById("gender").value,
+    },
+
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      // label: "Optional string that replaces customer email"
+      onClose: function(){
+        alert('Window closed.');
+      },
+      callback: function(response){
+        let message = 'Payment complete! Reference: ' + response.reference;
+        alert(message);
+      }
+    });
+    handler.openIframe();
+  }
+    </script>
+
+    <!-- Jquery JS-->
+    <script src="../payment/vendor/jquery/jquery.min.js"></script>
+    <!-- ../payment/Vendor JS-->
+    <script src="../payment/vendor/select2/select2.min.js"></script>
+    <script src="../payment/vendor/datepicker/moment.min.js"></script>
+    <script src="../payment/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="../payment/js/global.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->

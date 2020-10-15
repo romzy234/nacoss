@@ -1,0 +1,93 @@
+<section class="no-padding-top">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Form Elements -->
+        <div class="col-lg-12">
+          <div class="block">
+            <div class="title"><strong>Add User</strong></div>
+            <div class="block-body">
+              <form class="form-horizontal">
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label"> Full Name </label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" disabled="" value=" <%= data.firstName%> <%= data.lastName%>">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Date Collected</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" disabled="" value="<%= data.date%>">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Email</label>
+                  <div class="col-sm-9">
+                    <input type="email" class="form-control" disabled="" value="<%= data.email%>">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Phone Number</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" disabled="" value="<%= data.phone%>"  id="phone">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Maticulation Number</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" disabled="" type="text" value=" <%= data.matric%>" >
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Level</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" disabled="" value=" <%= data.level%>"  id="level">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Amount</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" disabled="" value="<%= data.amount%>">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Receiver</label>
+                  <div class="col-sm-9">
+                    <input type="text" placeholder="Collected by" class="form-control" disabled="" value="<%= data.collector%>">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">TypeOf Payment</label>
+                  <div class="col-sm-9">
+                    <input type="text" value="<%= data.type%>" class="form-control" disabled="">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Database Id</label>
+                  <div class="col-sm-9">
+                    <input type="text" value="<%= data._id%>" class="form-control" disabled="">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                    <label class="col-sm-3 form-control-label">Paystack Id</label>
+                    <div class="col-sm-9">
+                      <input type="text" value="<%= data.id%>" class="form-control" disabled="">
+                    </div>
+                  </div>
+                  <div class="line"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

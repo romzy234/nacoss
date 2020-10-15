@@ -1,0 +1,96 @@
+<section class="no-padding-top">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Form Elements -->
+        <div class="col-lg-12">
+          <div class="block">
+            <div class="title"><strong>Add User</strong></div>
+            <div class="block-body">
+              <form class="form-horizontal"  action="/data" method="post">
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">First Name</label>
+                  <div class="col-sm-9">
+                    <input required type="text" class="form-control" name="first_name">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Last Name</label>
+                  <div class="col-sm-9">
+                    <input required type="text" class="form-control" name="last_name">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Date</label>
+                  <div class="col-sm-9">
+                    <input required type="date" class="form-control" name="date">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Email</label>
+                  <div class="col-sm-9">
+                    <input required type="email" class="form-control" name="email">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Phone Number</label>
+                  <div class="col-sm-9">
+                    <input required type="text" class="form-control" name="phone"  id="phone" minlength="11">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Maticulation Number</label>
+                  <div class="col-sm-9">
+                    <input required type="text" class="form-control" placeholder="VUG/CSC/18/0001" type="text" name="matric"  id="mat-no" minlength="15" maxlength="15">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Level</label>
+                  <div class="col-sm-9">
+                    <select name="level" class="form-control mb-3 mb-3" required>
+                      <option value="100">Level 100</option>
+                      <option value="200">Level 200</option>
+                      <option value="300">Level 300</option>
+                      <option value="400">Level 400</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Amount</label>
+                  <div class="col-sm-9">
+                    <input required type="text" class="form-control" name="amount">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Receiver</label>
+                  <div class="col-sm-9">
+                    <input required type="text" placeholder="Collected by" class="form-control" name="recevier" value="123456">
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <label class="col-sm-3 form-control-label">Authorization Key</label>
+                  <div class="col-sm-9">
+                    <input required type="text" placeholder="Auth Key" maxlength="6" minlength="6" class="form-control" name="key"><small class="help-block-none">Type in Authorization Key.</small>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-group row">
+                  <div class="col-sm-9 ml-auto">
+                    <button type="submit" class="btn btn-primary">Add Payment</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

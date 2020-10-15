@@ -1,0 +1,13 @@
+ // middle ware
+ function checkSignIn(req, res, next){
+    if(req.session.user){
+       next();     //If session exists, proceed to page
+    } else {
+       var err = new Error("Not logged in!");
+       console.log(req.session.user);
+      //  next(err);  //Error, trying to access unauthorized page!
+      res.status(301).redirect('/admin');
+    }
+ }
+
+ module.exports = checkSignIn;

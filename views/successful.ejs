@@ -1,0 +1,79 @@
+<form action="/data" method="post">
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">first name</label>
+                <input class="input--style-4" placeholder="Jane" type="text" name="first_name"  id="first-name">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">last name</label>
+                <input class="input--style-4" placeholder="Doe" type="text" name="last_name"  id="last-name">
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Date</label>
+                <div class="input-group-icon">
+                    <input class="input--style-4 js-datepicker" type="text" name="date"  id="date">
+                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Gender</label>
+                <div class="p-t-10">
+                    <label class="radio-container m-r-45">Male
+                        <input type="radio" checked="checked" name="gender" value="guy">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-container">Female
+                        <input type="radio" name="gender" value="lady">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Email</label>
+                <input class="input--style-4" placeholder="example@gmail.com" type="email" name="email"  id="email-address">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Phone Number</label>
+                <input class="input--style-4" placeholder="08000000000" type="text" name="phone"  id="phone" minlength="11">
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Matriculation Number</label>
+                <input class="input--style-4" placeholder="VUG/CSC/18/0001" type="text" name="mat-no"  id="mat-no" minlength="15" maxlength="15">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Level</label>
+                <input class="input--style-4" placeholder="400" type="text" name="level"  id="level">
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-group">
+            <label class="label">Amount</label>
+            <input class="input--style-4" placeholder="4000"  type="text" name="Amount"  id="amount">
+        </div>
+    </div>
+    <div class="p-t-15">
+        <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+    </div>
+</form>
