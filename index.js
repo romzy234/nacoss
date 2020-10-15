@@ -33,9 +33,10 @@ app.use(bodyParser.json());
 app.use(express.json({limit : '10mb'}));
 app.use(express.static('views'));
 //Lauching Application
-app.listen(3000, () =>{
-    console.log('app is listen on port 3000')
-});
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+    console.log('Express server listening on port', port)
+  });
 
 //Router and router 
   app.use('/', indexRouter);
