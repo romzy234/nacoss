@@ -24,18 +24,14 @@ exports.postSignup = (req, res) => {
 };
 // post sign in 
 exports.postLogin = (req, res)=>{
-   console.log(req.body)
     if(!req.body.name || !req.body.password){
-       console.log('didnt read this')
        res.render('admin/login', {message: "Please enter both id and password"});
     } else {
       exco.findOne({ name: req.body.name, password: req.body.password}, (err, user)=>{
          if(user.name == req.body.name && user.password == req.body.password){
              req.session.user = user;
-             console.log("user logged in.")
              res.redirect('/admin/home');
        }else{
-         console.log('invaild cred')
          res.render('admin/login', {message: "Invalid credentials!"});
        }
       });//.catch(console.log('catch'));
